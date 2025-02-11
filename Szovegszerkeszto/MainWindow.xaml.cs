@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TextEditor;
 
 namespace Szovegszerkeszto
 {
@@ -16,9 +17,17 @@ namespace Szovegszerkeszto
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DocumentManager _documentManager;
         public MainWindow()
         {
             InitializeComponent();
+
+            _documentManager = new DocumentManager(body);
+
+            if (_documentManager.OpenDocument())
+            {
+                status.Text = "doc loaded";
+            }
         }
     }
 }
