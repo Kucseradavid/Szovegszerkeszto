@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Szovegszerkeszto"
         xmlns:UserControls="clr-namespace:Szovegszerkeszto.UserControls"
         mc:Ignorable="d"
-        Title="Eccerű SzövegSzerk" Height="450" Width="800">
+        Title="Eccerű SzövegSzerk" Width="1280" Height="720">
     <DockPanel>
         <UserControls:CustomMenu x:Name="menu" DockPanel.Dock="Top"/>
         <UserControls:CustomToolbar DockPanel.Dock="Top"/>

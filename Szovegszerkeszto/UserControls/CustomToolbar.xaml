@@ -10,57 +10,57 @@
     <ToolBarTray x:Name="toolbar" DockPanel.Dock="Top" Loaded="FontsizeFeltolt">
         <ToolBar>
             <Button ToolTip="Open">
-                <Image Source="../Icons/folder.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/open.png" 
+                       Width="50" Height="50"/>
             </Button>
             
             <Button ToolTip="Save">
-                <Image Source="../Icons/download.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/save.png" 
+                       Width="50" Height="50"/>
             </Button>
         </ToolBar>
         
         
         <ToolBar>
             <Button ToolTip="Cut">
-                <Image Source="../Icons/folder.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/cut.png" 
+                       Width="50" Height="50"/>
             </Button>
             
             <Button ToolTip="Copy">
-                <Image Source="../Icons/folder.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/copy.png" 
+                       Width="50" Height="50"/>
             </Button>
             
             <Button ToolTip="Paste">
-                <Image Source="../Icons/folder.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/paste.png" 
+                       Width="50" Height="50"/>
             </Button>
         </ToolBar>
         
         
         <ToolBar>
             <ToggleButton ToolTip="Bold" x:Name="boldbtn">
-                <Image Source="../Icons/download.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/bold.png" 
+                       Width="50" Height="50"/>
             </ToggleButton>
             
             <ToggleButton ToolTip="Italic" x:Name="italicbtn">
-                <Image Source="../Icons/download.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/italic.png" 
+                       Width="50" Height="50"/>
             </ToggleButton>
             
             <ToggleButton ToolTip="Underline" x:Name="underlinebtn">
-                <Image Source="../Icons/download.png" 
-                       Width="20" Height="20"/>
+                <Image Source="../Icons/underlined.png" 
+                       Width="50" Height="50"/>
             </ToggleButton>
             
             <Separator/>
             
-            <ComboBox x:Name="fonts" MinWidth="100" ToolTip="Font"
+            <ComboBox x:Name="fonts" MinWidth="200" ToolTip="Font" Height="50"
                       ItemsSource="{x:Static Fonts.SystemFontFamilies}"/>
             
-            <ComboBox x:Name="fontsize" MinWidth="40" ToolTip="Fontsize"/>
+            <ComboBox x:Name="fontsize" MinWidth="50" ToolTip="Fontsize" Height="50"/>
         </ToolBar>
     </ToolBarTray>
 </UserControl>

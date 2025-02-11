@@ -9,15 +9,47 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\bold.png" />
+    <None Remove="Icons\copy.png" />
+    <None Remove="Icons\cut.png" />
     <None Remove="Icons\download.png" />
     <None Remove="Icons\folder.png" />
+    <None Remove="Icons\italic.png" />
+    <None Remove="Icons\open.png" />
+    <None Remove="Icons\paste.png" />
+    <None Remove="Icons\save.png" />
+    <None Remove="Icons\underlined.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icons\bold.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\cut.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icons\download.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\folder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\italic.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\paste.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\save.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\underlined.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
