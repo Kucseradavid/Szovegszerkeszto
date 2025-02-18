@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TextEditor;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Szovegszerkeszto
 {
@@ -28,6 +29,23 @@ namespace Szovegszerkeszto
             {
                 status.Text = "doc loaded";
             }
+        }
+
+        private void toolbar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox source = e.OriginalSource as ComboBox;
+            if (source == null) return;
+            switch (source.Name)
+            {
+                case "fonts": _documentManager.ApplyToSelection(TextBlock.FontFamilyProperty, source.SelectedItem); break;
+                case "fontsize": _documentManager.ApplyToSelection(TextBlock.FontSizeProperty, Convert.ToDouble(source.SelectedItem)); break;
+            }
+            body.Focus();
+        }
+
+        private void body_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -32,5 +32,14 @@ namespace Szovegszerkeszto.UserControls
                 fontsize.Items.Add(i);
             }
         }
+
+        public void SynchronizeWith(TextSelection selection)
+        {
+            object size = selection.GetPropertyValue(TextBlock.FontSizeProperty);
+            if (size != DependencyProperty.UnsetValue)
+            {
+                fontsize.SelectedValue = Convert.ToDouble(size);
+            }
+        }
     }
 }

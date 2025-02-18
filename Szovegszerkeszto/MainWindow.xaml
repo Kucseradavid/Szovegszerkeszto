@@ -9,12 +9,14 @@
         Title="Eccerű SzövegSzerk" Width="1280" Height="720">
     <DockPanel>
         <UserControls:CustomMenu x:Name="menu" DockPanel.Dock="Top"/>
-        <UserControls:CustomToolbar DockPanel.Dock="Top"/>
+        <UserControls:CustomToolbar x:Name="toolbar" DockPanel.Dock="Top"
+                                    ComboBox.SelectionChanged="toolbar_SelectionChanged"/>
         <StatusBar DockPanel.Dock="Bottom">
             <TextBlock x:Name="status"/>
         </StatusBar>
         <RichTextBox x:Name="body" SpellCheck.IsEnabled="True"
                      AcceptsReturn="True" AcceptsTab="True"
-                     BorderThickness="0,2,0,0"/>
+                     BorderThickness="0,2,0,0"
+                     SelectionChanged="body_SelectionChanged"/>
     </DockPanel>
 </Window>

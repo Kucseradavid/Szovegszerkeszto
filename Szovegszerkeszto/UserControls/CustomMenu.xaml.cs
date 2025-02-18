@@ -28,7 +28,7 @@ namespace Szovegszerkeszto.UserControls
         private void AboutClick(object sender, RoutedEventArgs e)
         {
             //MessageBox.Show("-Aurora");
-            MessageBox.Show("Mit kípzesz magadró");
+            MessageBox.Show("Mit kípzesz magadró hogy néked segíccség kű egy roadt szövgszerszesztűhőő hogy erre nem kípes egy normaalis embő", "Elbocsájtó, szép üzenet");
         }
     }
 }

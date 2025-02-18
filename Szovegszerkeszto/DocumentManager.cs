@@ -1,7 +1,9 @@
 ﻿using System.IO;
+using System.Reflection.Metadata;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media;
 using Microsoft.Win32;
 
 namespace TextEditor
@@ -19,6 +21,8 @@ namespace TextEditor
         public bool OpenDocument()
         {
             OpenFileDialog dialog = new OpenFileDialog();
+
+            //dialog.Filter = "Rich Text Document | *.rtf | Text Document | *.txt";
 
             if (dialog.ShowDialog() ?? false)
             {
@@ -74,6 +78,17 @@ namespace TextEditor
             }
 
             return false;
+        }
+
+
+        public void ApplyToSelection(DependencyProperty property, object value)
+        {
+            if (value != null)
+            {
+                //double v = Convert.ToDouble(value);
+                _richTextBox.Selection.ApplyPropertyValue(property, value);
+            }
+                
         }
     }
 }
