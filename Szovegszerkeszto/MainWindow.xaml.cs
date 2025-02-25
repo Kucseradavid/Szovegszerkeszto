@@ -33,8 +33,11 @@ namespace Szovegszerkeszto
 
         private void toolbar_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (toolbar.IsSynchronizing) return;
+            
             ComboBox source = e.OriginalSource as ComboBox;
             if (source == null) return;
+
             switch (source.Name)
             {
                 case "fonts": _documentManager.ApplyToSelection(TextBlock.FontFamilyProperty, source.SelectedItem); break;
@@ -45,7 +48,7 @@ namespace Szovegszerkeszto
 
         private void body_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
+            toolbar.SynchronizeWith(body.Selection);
         }
     }
 }
