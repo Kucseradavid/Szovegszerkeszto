@@ -20,6 +20,8 @@ namespace Szovegszerkeszto.UserControls
     /// </summary>
     public partial class CustomToolbar : UserControl
     {
+        public bool IsSynchronizing { get; private set; }
+
         public CustomToolbar()
         {
             InitializeComponent();
@@ -33,13 +35,48 @@ namespace Szovegszerkeszto.UserControls
             }
         }
 
+        private void SetFontSize(double size)
+        {
+            fontsize.SelectedValue = size;
+        }
+
+        private void SetFontWeight(FontWeight weight)
+        {
+            boldbtn.IsChecked = weight == FontWeights.Bold;
+        }
+
+        private void SetFontStyle(FontStyle style)
+        {
+            italicbtn.IsChecked = style == FontStyles.Italic;
+        }
+
+        private void SetTextDecoration(TextDecorationCollection decoration)
+        {
+            underlinebtn.IsChecked = decoration == TextDecorations.Underline;
+        }
+
+        private void SetFontFamily(FontFamily family)
+        {
+            fonts.SelectedItem = family;
+        }
+
+        private void Synchronize<T>(TextSelection selection, DependencyProperty property, Action<T> methodToCall)
+        {
+            object value = selection.GetPropertyValue(property);
+            if (value != DependencyProperty.UnsetValue) methodToCall((T)value);
+        }
+
         public void SynchronizeWith(TextSelection selection)
         {
-            object size = selection.GetPropertyValue(TextBlock.FontSizeProperty);
-            if (size != DependencyProperty.UnsetValue)
-            {
-                fontsize.SelectedValue = Convert.ToDouble(size);
-            }
-        }
+            IsSynchronizing = true;
+
+            Synchronize<double>(selection, TextBlock.FontSizeProperty, SetFontSize);
+            Synchronize<FontWeight>(selection, TextBlock.FontWeightProperty, SetFontWeight);
+            Synchronize<FontStyle>(selection, TextBlock.FontStyleProperty, SetFontStyle);
+            Synchronize<TextDecorationCollection>(selection, TextBlock.TextDecorationsProperty, SetTextDecoration);
+            Synchronize<FontFamily>(selection, TextBlock.FontFamilyProperty, SetFontFamily);
+
+            IsSynchronizing = false;
+        } //27. oldal pdfben - nem működik
     }
 }
